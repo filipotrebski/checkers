@@ -17,7 +17,7 @@ public class BoardRow {
 
     void getFigure(int index) {
         figures.get(index);
-    }
+    } // index-1?
 
     public ArrayList<Figure> getFigures() {
         return figures;

@@ -5,7 +5,9 @@ public class BasicRules implements GameRules{
     @Override
     public void move(int sourceRow, int sourceColumn, int destinationRow , int destinationColumn) {
         sourceRow = updateRowCoordinates(sourceRow);
+        sourceColumn = updateColumnCoordinates(sourceColumn);
         destinationRow = updateRowCoordinates(destinationRow);
+        destinationRow = updateColumnCoordinates(destinationColumn);
         if(isMovePossible(sourceRow,sourceRow,destinationRow,destinationColumn)){
             Figure figure = board.getFigure(sourceRow,sourceColumn);
             board.setFigure(sourceRow, sourceColumn, new None());
