@@ -1,4 +1,6 @@
-package com.filipotrebski.checkers;
+package com.filipotrebski.checkers.rules;
+
+import com.filipotrebski.checkers.Board;
 
 public interface GameRules {
 

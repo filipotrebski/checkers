@@ -1,4 +1,4 @@
-package com.filipotrebski.checkers;
+package com.filipotrebski.checkers.figures;
 
 public class None extends Figure {
 

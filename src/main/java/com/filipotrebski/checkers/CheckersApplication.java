@@ -1,5 +1,7 @@
 package com.filipotrebski.checkers;
 
+import com.filipotrebski.checkers.rules.BasicRules;
+import com.filipotrebski.checkers.rules.GameRules;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

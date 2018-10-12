@@ -1,5 +1,9 @@
 package com.filipotrebski.checkers;
 
+import com.filipotrebski.checkers.figures.Figure;
+import com.filipotrebski.checkers.figures.None;
+import com.filipotrebski.checkers.figures.Pawn;
+
 import java.util.ArrayList;
 
 
@@ -7,11 +11,11 @@ public class Board {
 
     private ArrayList<BoardRow> checkersBoard = new ArrayList<BoardRow>();
 
-    Figure getFigure(int row, int column) {
+    public Figure getFigure(int row, int column) {
         return checkersBoard.get(row ).figures.get(column );//-1 bo numerujemy od 0
     }
 
-    void setFigure(int row, int col, Figure figure) {
+    public void setFigure(int row, int col, Figure figure) {
         checkersBoard.get(row).placeFigure(figure, col);//aby odwrócić koordynaaty 8-i dla rzedu
         checkersBoard.get(row ).figures.remove(col+1);
     }

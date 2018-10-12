@@ -1,5 +1,8 @@
 package com.filipotrebski.checkers;
 
+import com.filipotrebski.checkers.figures.Figure;
+import com.filipotrebski.checkers.figures.None;
+
 import java.util.ArrayList;
 public class BoardRow {
     ArrayList<Figure> figures = new ArrayList<Figure>();

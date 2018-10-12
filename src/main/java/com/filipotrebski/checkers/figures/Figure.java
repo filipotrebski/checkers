@@ -1,6 +1,6 @@
-package com.filipotrebski.checkers;
+package com.filipotrebski.checkers.figures;
 
-abstract class Figure {
+public abstract class Figure {
 
     private String figureType;
     private String figureColor;

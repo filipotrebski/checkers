@@ -1,10 +1,9 @@
-package com.filipotrebski.checkers;
+package com.filipotrebski.checkers.figures;
 
 public enum FigureColor {
-
-    WHITE ("\u001B[37m"),
-    BLACK ("\u001B[35m"),
-    NONE ("");
+    BLACK("BLACK"),
+    NONE("NONE"),
+    WHITE("WHITE");
 
     private String color;
 

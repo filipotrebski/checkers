@@ -1,6 +1,13 @@
-package com.filipotrebski.checkers;
+package com.filipotrebski.checkers.rules;
 
-public class BasicRules implements GameRules{
+
+import com.filipotrebski.checkers.figures.Figure;
+import com.filipotrebski.checkers.figures.None;
+
+
+public class BasicRules implements GameRules {
+
+    public static final String NONE = "NONE";
 
     @Override
     public void move(int sourceRow, int sourceColumn, int destinationRow , int destinationColumn) {
@@ -19,7 +26,7 @@ public class BasicRules implements GameRules{
 
     @Override
     public boolean isMovePossible(int row, int column, int destinationRow, int destinationColumn) {
-        if (board.getFigure(row, column).getFigureType() == "NONE") {
+        if (board.getFigure(row, column).getFigureType().equals(NONE)) {
             return false;
         } else return isDestinationFree(row, column, destinationRow, destinationColumn);
     }
@@ -42,9 +49,7 @@ public class BasicRules implements GameRules{
 
     @Override
     public boolean isDestinationFree(int row, int column, int destinationRow, int destinationColumn) {
-        if(board.getFigure(row,column).getFigureType() != "None") {
-            return true;
-        } else if (isHitPossible(row,column,destinationRow,destinationColumn)) {
+        if (isHitPossible(row,column,destinationRow,destinationColumn)) {
             return true;
         }
         return false;
