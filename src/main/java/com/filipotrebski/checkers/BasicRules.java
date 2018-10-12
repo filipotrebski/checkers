@@ -21,10 +21,7 @@ public class BasicRules implements GameRules{
     public boolean isMovePossible(int row, int column, int destinationRow, int destinationColumn) {
         if (board.getFigure(row, column).getFigureType() == "NONE") {
             return false;
-        } else if (!isDestinationFree(row,column,destinationRow,destinationColumn)){
-            return false;
-        }
-        return true;
+        } else return isDestinationFree(row, column, destinationRow, destinationColumn);
     }
 
     @Override
