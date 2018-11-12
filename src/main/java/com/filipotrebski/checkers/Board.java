@@ -1,6 +1,7 @@
 package com.filipotrebski.checkers;
 
 import com.filipotrebski.checkers.figures.Figure;
+import com.filipotrebski.checkers.figures.FigureColor;
 import com.filipotrebski.checkers.figures.None;
 import com.filipotrebski.checkers.figures.Pawn;
 
@@ -12,27 +13,27 @@ public class Board {
     private ArrayList<BoardRow> checkersBoard = new ArrayList<BoardRow>();
 
     public Figure getFigure(int row, int column) {
-        return checkersBoard.get(row ).figures.get(column );//-1 bo numerujemy od 0
+        return checkersBoard.get(row).figures.get(column);//-1 bo numerujemy od 0
     }
 
     public void setFigure(int row, int col, Figure figure) {
         checkersBoard.get(row).placeFigure(figure, col);//aby odwrócić koordynaaty 8-i dla rzedu
-        checkersBoard.get(row ).figures.remove(col+1);
+        checkersBoard.get(row).figures.remove(col + 1);
     }
 
-    void setUpTheBoard() {
+    public void setUpTheBoard() {
         for (int i = 0; i < 8; i++) {
             checkersBoard.add(new BoardRow());
             checkersBoard.get(i).createEmptyRow();
             for (int j = 0; j < 8; j++) {
-                if ((i + j) % 2 == 0) {
+                if ((i + j) % 2 != 0) {
                     if (i < 2) {
-                        setFigure(i , j , new Pawn("black"));
+                        setFigure(i, j, new Pawn(FigureColor.BLACK.getColor()));
                     } else if (i > 5) {
-                        setFigure(i , j , new Pawn("white"));
+                        setFigure(i, j, new Pawn(FigureColor.WHITE.getColor()));
                     }
                 } else {
-                    setFigure(i , j , new None());
+                    setFigure(i, j, new None());
                 }
             }
             //checkersBoard.get(i).createEmptyRow();

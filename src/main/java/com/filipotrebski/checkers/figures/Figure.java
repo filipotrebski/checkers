@@ -6,9 +6,10 @@ public abstract class Figure {
     private String figureColor;
 
     public Figure(String figureType, String figureColor) {
-        //FigureColor color = FigureColor.valueOf(figureColor.toUpperCase());
-        this.figureType = figureType;
-        this.figureColor = figureColor;
+        FigureColor color = FigureColor.valueOf(figureColor.toUpperCase());
+        FigureType type = FigureType.valueOf(figureType.toUpperCase());
+        this.figureType = type.getType();
+        this.figureColor = color.getColor();
     }
 
     public String getFigureColor() {
